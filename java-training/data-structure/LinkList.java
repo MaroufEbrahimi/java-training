@@ -9,6 +9,20 @@ public class LinkList {
 		first = newNode;
 	}
 
+	// Insertion at the end of list
+	public void insertLast(int data) {
+		Node newNode = new Node(data);
+		if (first == null) {
+			first = newNode;
+			return;
+		}
+		Node current = first;
+		while (current.next != null) {
+			current = current.next;
+		}
+		current.next = newNode;
+	}
+
 	// Displaying elements of the list
 	public void display() {
 		Node current = first;
@@ -23,6 +37,7 @@ public class LinkList {
 	public static void main(String[] args) {
 		LinkList linklist = new LinkList();
 		linklist.insertFirst(5);
+		linklist.insertLast(9);
 		linklist.display();
 	}
 
