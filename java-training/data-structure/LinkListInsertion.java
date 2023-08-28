@@ -23,6 +23,28 @@ public class LinkList {
 		current.next = newNode;
 	}
 
+	// Insertion at the specific position
+	public void insertSpecificPosition(int position, int data) {
+		Node newNode = new Node(data);
+
+		if (position == 1) {
+			newNode.next = first;
+			first = newNode;
+		} else {
+			Node prev = first;
+			int count = 1;
+
+			while (count < position - 1) {
+				prev = prev.next;
+				count++;
+			}
+
+			Node current = prev.next;
+			prev.next = newNode;
+			newNode.next = current;
+		}
+	}
+
 	// Displaying elements of the list
 	public void display() {
 		Node current = first;
@@ -38,6 +60,9 @@ public class LinkList {
 		LinkList linklist = new LinkList();
 		linklist.insertFirst(5);
 		linklist.insertLast(9);
+		linklist.insertSpecificPosition(3, 5);
+		linklist.insertSpecificPosition(4, 11);
+		linklist.insertSpecificPosition(1, 2);
 		linklist.display();
 	}
 
