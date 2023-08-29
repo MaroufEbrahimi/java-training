@@ -12,16 +12,24 @@ public class SwapTwoDigitNumbers {
 		System.out.println("Before Swaping: " + num);
 		System.out.println("After Swaping: " + swap(num));
 	}
-
+	
+//	this new way for swapping
 	public static int swap(int num) {
 		int x = num / 10;
-		int y = num % 10;
-		int temp = x;
-		x = y;
-		y = temp;
-		String str = x+""+y;
-		int res = Integer.parseInt(str);
-		return res;
+		int y = num % 10 * 10 + x;
+		return y;
 	}
+
+//	#---- another way for swapping ----#
+//	public static int swap(int num) {
+//		int x = num / 10;
+//		int y = num % 10;
+//		int temp = x;
+//		x = y;
+//		y = temp;
+//		String str = x+""+y;
+//		int res = Integer.parseInt(str);
+//		return res;
+//	}
 
 }
