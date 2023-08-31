@@ -1,4 +1,4 @@
-public class LinkList {
+public class LinkListInsertion {
 
 	private Node first;
 
@@ -57,7 +57,7 @@ public class LinkList {
 	}
 
 	public static void main(String[] args) {
-		LinkList linklist = new LinkList();
+		LinkListInsertion linklist = new LinkListInsertion();
 		linklist.insertFirst(5);
 		linklist.insertLast(9);
 		linklist.insertSpecificPosition(3, 5);
