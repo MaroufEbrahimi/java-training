@@ -8,6 +8,9 @@ public class NumberFormatter {
 		int num = 10203040;
 		NumberFormat formatter = NumberFormat.getInstance();
 		System.out.println(formatter.format(num));
+		
+		// another format
+		int a = 100_000_000;
 	}
 
 }
