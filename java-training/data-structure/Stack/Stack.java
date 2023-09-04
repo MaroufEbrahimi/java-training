@@ -29,4 +29,5 @@ public class Stack {
 	public boolean isFull() {
 		return (top == maxSize - 1);
 	}
+
 }
