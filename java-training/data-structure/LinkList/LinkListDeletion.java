@@ -29,10 +29,27 @@ public class LinkListDeletion {
 		return current;
 	}
 
+	// Deleting a Node from specific position on the list
+	public void deleteSpecificPosition(int position) {
+		if (position == 1) {
+			first = first.next;
+		} else {
+			Node prev = first;
+			int count = 1;
+			while (count < position - 1) {
+				prev = prev.next;
+				count++;
+			}
+			Node current = prev.next;
+			prev.next = current.next;
+		}
+	}
+
 	public static void main(String[] args) {
 		LinkListDeletion deletion = new LinkListDeletion();
 		deletion.deleteFirst();
 		deletion.deleteLast();
+		deletion.deleteSpecificPosition(4);
 	}
 
 }
