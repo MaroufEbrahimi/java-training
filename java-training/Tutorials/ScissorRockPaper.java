@@ -22,6 +22,17 @@ public class ScissorRockPaper {
 					System.out.println("Computer is scissor, you are PAPER. Computer won");
 				}
 			}
+		} else if (randomNum == 1) {
+			if (num == randomNum) {
+				System.out.println("Computer is rock, you are rock too. it is a draw");
+			} else {
+				if (num == 0) {
+					System.out.println("Computer is rock, you are scissor. Computer won ");
+				}
+				if (num == 2) {
+					System.out.println("Computer is rock, you are paper, you won");
+				}
+			}
 		}
 	}
 }
