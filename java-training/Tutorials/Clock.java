@@ -34,4 +34,8 @@ public class Clock implements Runnable {
 		}
 	}
 
+	public String getTime() {
+		return hours + ":" + minutes + ":" + seconds;
+	}
+
 }
