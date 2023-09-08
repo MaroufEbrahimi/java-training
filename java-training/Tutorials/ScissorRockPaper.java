@@ -4,33 +4,44 @@ import java.util.Scanner;
 public class ScissorRockPaper {
 
 	public static void main(String[] args) {
-
-		int randomNum = (int) (Math.random() * 3);
+		int ranNumber = (int) (Math.random() * 3);
 
 		var input = new Scanner(System.in);
-		System.out.println("Enter scissor(0), rock(1), paper(2): ");
-		int num = input.nextInt();
 
-		if (randomNum == 0) {
-			if (num == randomNum) {
-				System.out.println("Computer is scissor, you are scissor too! it is a draw");
+		System.out.print("Enter for SCISSOR(0), ROCK(1) and PAPER(2): ");
+		int userNum = input.nextInt();
+
+		if (ranNumber == 0) {
+			if (userNum == ranNumber) {
+				System.out.println("Computer is SCISSOR, you are SCISSOR too! it is a draw");
 			} else {
-				if (num == 1) {
-					System.out.println("Computer is scissor, you are ROCK. you won");
+				if (userNum == 1) {
+					System.out.println("Computer is SCISSOR, you are ROCK. you won");
 				}
-				if (num == 2) {
-					System.out.println("Computer is scissor, you are PAPER. Computer won");
+				if (userNum == 2) {
+					System.out.println("Computer is SCISSOR, you are PAPER. Computer won");
 				}
 			}
-		} else if (randomNum == 1) {
-			if (num == randomNum) {
-				System.out.println("Computer is rock, you are rock too. it is a draw");
+		} else if (ranNumber == 1) {
+			if (userNum == ranNumber) {
+				System.out.println("Computer is ROCK, you are ROCK too. it is a draw");
 			} else {
-				if (num == 0) {
-					System.out.println("Computer is rock, you are scissor. Computer won ");
+				if (userNum == 0) {
+					System.out.println("Computer is ROCK, you are SCISSOR. Computer won");
 				}
-				if (num == 2) {
-					System.out.println("Computer is rock, you are paper, you won");
+				if (userNum == 2) {
+					System.out.println("Computer is ROCK, you are PAPER. you won");
+				}
+			}
+		} else {
+			if (userNum == ranNumber) {
+				System.out.println("Computer is PAPER, you are PAPER too. it is a draw");
+			} else {
+				if (userNum == 0) {
+					System.out.println("Computer is PAPER, you are SCISSOR. you won");
+				}
+				if (userNum == 1) {
+					System.out.println("Computer is PAPER, you are ROCK. Computer won");
 				}
 			}
 		}
