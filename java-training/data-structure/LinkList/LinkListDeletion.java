@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class LinkListDeletion {
 
 	private Node first;
@@ -45,11 +47,30 @@ public class LinkListDeletion {
 		}
 	}
 
+	// Deleting a Node by specific value
+	public void deleteSpecificValue(int data) {
+		if (first == null)
+			return;
+		if (first.data == data) {
+			deleteFirst();
+		}
+
+		Node current = first;
+		while (current.next != null) {
+			if (current.next.data == data) {
+				current.next = current.next.next;
+				return;
+			}
+			current = current.next;
+		}
+	}
+
 	public static void main(String[] args) {
 		LinkListDeletion deletion = new LinkListDeletion();
 		deletion.deleteFirst();
 		deletion.deleteLast();
 		deletion.deleteSpecificPosition(4);
+		deletion.deleteSpecificValue(2);
 	}
 
 }
