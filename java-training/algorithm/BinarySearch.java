@@ -22,7 +22,8 @@ public class BinarySearch {
 				return mid;
 			}
 			// When we using Descending Array the condition must be this!
-			// else if (arr[mid] > key)
+			// else if (array[mid] > key)
+			// This is for Ascending
 			else if (array[mid] < key) {
 				return binary(array, mid + 1, len, key);
 			} else
