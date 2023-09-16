@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class EfficientOfBubbleSort {
 
 	public static void main(String[] args) {
 		int arr[] = { 34, 6, 1, 12, 4, 0, 2, 23, 66, 90 };
