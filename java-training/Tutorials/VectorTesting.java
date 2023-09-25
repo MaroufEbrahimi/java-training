@@ -3,7 +3,7 @@ package Tutorials;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vector {
+public class VectorTesting {
 
 	public static void main(String[] args) {
 		// vector is a part of java (is a collection of objects)
