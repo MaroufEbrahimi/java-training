@@ -9,6 +9,7 @@ public class InsertionSort {
 			System.out.format("%d, ", l);
 		}
 
+		long startTime = System.currentTimeMillis();
 		int i, key, j;
 		for (i = 1; i < list.length; i++) {
 			key = list[i];
@@ -19,6 +20,9 @@ public class InsertionSort {
 			}
 			list[j + 1] = key;
 		}
+
+		long endTime = System.currentTimeMillis();
+		System.out.println("\nTime is: " + (endTime - startTime) + "ms");
 
 		System.out.println("\nAfter Sorting:");
 		for (int l : list) {
