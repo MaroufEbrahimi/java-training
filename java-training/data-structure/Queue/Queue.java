@@ -1,8 +1,8 @@
 
 public class Queue {
 
-	private int size;
-	private int[] queueArray;
+	private int maxSize;
+	private int[] queueArray = new int[5];
 	private int front;
 	private int rear;
 
@@ -15,25 +15,18 @@ public class Queue {
 	}
 
 	// Create a function for inserting at the end of Queue (rear)
-	public boolean insert(int data) {
-		boolean res = false;
-		if (rear != queueArray.length - 1) {
-			queueArray[++rear] = data;
-			// size++;
-			res = true;
-		}
-		return res;
+	public void insert(int data) {
+		queueArray[rear] = data;
+		rear++;
+		maxSize++;
 	}
 
 	// Removing a value at the front of Queue
 	public int remove() {
-		int res = 0;
-		if (size != 0) {
-			front++;
-			res = queueArray[front];
-			size--;
-		}
-		return res;
+		int data = queueArray[front];
+		front++;
+		maxSize--;
+		return data;
 	}
 
 	// Finding the front of element
@@ -53,6 +46,14 @@ public class Queue {
 	// Finding the size of Queue
 	public int getSize() {
 		return size;
+	}
+	
+	// displaying all elements of Queue
+	public void display() {
+		System.out.print("Elements: ");
+		for (int i = 0; i < maxSize; i++) {
+			System.out.print(queueArray[front + i] + " ");
+		}
 	}
 
 }
