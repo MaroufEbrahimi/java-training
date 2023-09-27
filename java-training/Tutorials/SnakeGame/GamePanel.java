@@ -33,8 +33,9 @@ public class GamePanel extends JPanel implements ActionListener {
 		this.setBackground(Color.black);
 		this.setFocusable(true);
 		this.addKeyListener(new MyKeyAdapter());
+		startGame();
 	}
-	
+
 	public void startGame() {
 		newApple();
 		running = true;
@@ -47,7 +48,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		draw(g);
 
 	}
-	
+
 	public void draw(Graphics g) {
 		if (running) {
 			for (int i = 0; i < SCREEN_HEIGHT / UNIT_SIZE; i++) {
@@ -55,7 +56,8 @@ public class GamePanel extends JPanel implements ActionListener {
 				g.drawLine(0, i * UNIT_SIZE, SCREEN_WIDTH, i * UNIT_SIZE);
 			}
 			g.setColor(Color.red);
-			// g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
+			// g.setColor(new Color(random.nextInt(255), random.nextInt(255),
+			// random.nextInt(255)));
 			g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
 			// draw snake
@@ -79,7 +81,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		}
 
 	}
-	
+
 	public void newApple() {
 		appleX = random.nextInt((int) (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
 		appleY = random.nextInt((int) (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
@@ -107,7 +109,7 @@ public class GamePanel extends JPanel implements ActionListener {
 			break;
 		}
 	}
-	
+
 	public void checkApple() {
 		if ((x[0] == appleX) && (y[0] == appleY)) {
 			bodyPart++;
@@ -143,7 +145,7 @@ public class GamePanel extends JPanel implements ActionListener {
 			timer.stop();
 		}
 	}
-	
+
 	public void gameOver(Graphics g) {
 		// Score
 		g.setColor(Color.red);
@@ -166,6 +168,35 @@ public class GamePanel extends JPanel implements ActionListener {
 			checkCollisions();
 		}
 		repaint();
+	}
+
+	public class MyKeyAdapter extends KeyAdapter {
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			switch (e.getKeyCode()) {
+			case KeyEvent.VK_LEFT:
+				if (direction != 'R') {
+					direction = 'L';
+				}
+				break;
+			case KeyEvent.VK_RIGHT:
+				if (direction != 'L') {
+					direction = 'R';
+				}
+				break;
+			case KeyEvent.VK_UP:
+				if (direction != 'D') {
+					direction = 'U';
+				}
+				break;
+			case KeyEvent.VK_DOWN:
+				if (direction != 'U') {
+					direction = 'D';
+				}
+				break;
+			}
+		}
 	}
 
 }
