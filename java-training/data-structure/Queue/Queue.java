@@ -8,8 +8,8 @@ public class Queue {
 
 	// Queue Constructor and Initialization some value
 	public Queue(int s) {
-		size = s;
-		queueArray = new int[size];
+		maxSize = s;
+		queueArray = new int[maxSize];
 		front = -1;
 		rear = -1;
 	}
