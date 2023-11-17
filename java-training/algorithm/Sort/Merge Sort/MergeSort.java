@@ -8,6 +8,15 @@ public class MergeSort {
 	}
 
 
-	
+	public static void divide(int arr[], int start, int end) {
+		if (start >= end) {
+			return;
+		}
+
+		int mid = start + (end - start) / 2;
+		divide(arr, start, mid);
+		divide(arr, mid + 1, end);
+		conquer(arr, start, mid, end);
+	}
 
 }
