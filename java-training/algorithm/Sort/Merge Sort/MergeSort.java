@@ -1,9 +1,24 @@
-package sorting;
 
 public class MergeSort {
 
 	public static void main(String[] args) {
 		int arr[] = { 4, 1, 8, 0, 1, 2, 3, 4, 7, 8 };
+
+		// end = 4
+		// start = 0
+		
+		int len = arr.length; // 4
+
+		for (int i : arr) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		
+		divide(arr, 0, len - 1); // 3
+		
+		for (int i : arr) {
+			System.out.print(i+" ");
+		}
 		
 	}
 
