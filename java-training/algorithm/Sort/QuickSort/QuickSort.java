@@ -9,6 +9,23 @@ public class QuickSort {
 		for (int a = 0; a < arr.length; a++) {
 			arr[a] = random.nextInt(10000);
 		}
+
+		System.out.println("Before");
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+
+		long startTime = System.currentTimeMillis();
+
+		quickSort(arr, 0, arr.length - 1);
+
+		System.out.println("\nAfter");
+		for (int i : arr) {
+			System.out.println(i + " ");
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println("\n\nThe time: " + (endTime - startTime) / 1000);
+
 	}
 
 	public static void quickSort(int arr[], int lowIndex, int highIndex) {
