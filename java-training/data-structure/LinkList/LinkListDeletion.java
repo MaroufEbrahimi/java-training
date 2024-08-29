@@ -43,7 +43,11 @@ public class LinkListDeletion {
 				count++;
 			}
 			Node current = prev.next;
-			prev.next = current.next;
+			if (current == null) {
+				System.out.println("Position out of bounds.");
+			} else {
+				prev.next = current.next;
+			}
 		}
 	}
 
