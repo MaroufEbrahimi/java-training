@@ -1,4 +1,3 @@
-
 public class MergeSort {
 
 	public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class MergeSort {
 			return;
 		}
 
-		int mid = start + (end - start) / 2;
+		int mid = start + (end - start) / 2; 
 		divide(arr, start, mid);
 		divide(arr, mid + 1, end);
 		conquer(arr, start, mid, end);

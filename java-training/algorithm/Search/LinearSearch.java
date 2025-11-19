@@ -14,7 +14,7 @@ public class LinearSearch {
 			if (list[i] == a)
 				return i;
 		}
-		return 0;
+		return 0;	 	
 	}
 
 }

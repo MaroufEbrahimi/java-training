@@ -15,7 +15,6 @@ public class BinaryTree {
 		root = tr.insert(root, 1);
 		root = tr.insert(root, 14);
 		root = tr.insert(root, 13);
-
 	}
 
 }
