@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class LinkListDeletion {
 
 	private Node first;
@@ -32,19 +30,24 @@ public class LinkListDeletion {
 	}
 
 	// Deleting a Node from specific position on the list
-	public void deleteSpecificPosition(int position) {
-		if (position == 1) {
+	public void deleteSpecificPosition(int pos) {
+		if (pos <= 0 || first == null) {
+			System.out.println("pos out of bound");
+		} else if (pos == 1) {
 			first = first.next;
 		} else {
 			Node prev = first;
 			int count = 1;
-			while (count < position - 1) {
+
+			while (count < pos - 1 && prev.next != null) {
 				prev = prev.next;
 				count++;
 			}
+
 			Node current = prev.next;
+
 			if (current == null) {
-				System.out.println("Position out of bounds.");
+				System.out.println("pos out of bound");
 			} else {
 				prev.next = current.next;
 			}
