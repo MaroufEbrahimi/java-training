@@ -17,25 +17,49 @@ public class CircularQueue {
 
 	// inserting on Queue
 	public void insert(int data) {
-		if (rear == maxSize - 1) { // deal with wrap around
+		if (isFull()) {
+			System.out.println("Queue is full");
+			return;
+		}
+
+		if (rear == maxSize - 1) {
 			rear = -1;
 		}
+
 		if (front == -1) {
 			front = 0;
 		}
+
 		queue[++rear] = data;
 		items++;
 	}
 
 	public int remove() {
+		if (isEmpty()) {
+			throw new RuntimeException("Queue is empty");
+		}
+
 		int temp = queue[front++];
-		if (front == maxSize)
+
+		if (front == maxSize) {
 			front = 0;
+		}
+
 		items--;
+
+		if (items == 0) {
+			front = -1;
+			rear = -1;
+		}
+
 		return temp;
 	}
 
 	public int peek() {
+		if (isEmpty()) {
+			throw new RuntimeException("Queue is empty");
+		}
+
 		return queue[front];
 	}
 
